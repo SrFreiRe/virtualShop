@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Shop</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 style="font-weight:700;letter-spacing:-1px;">💿 Virtual Shop</h1>
+      
+    </header>
+    <form action="CartServlet" method="post" id="add-form" autocomplete="off" class="centered-form">
+  <div class="form-group">
+    <label for="cd"><b>Album:</b></label>
+    <select name="cd" id="cd" class="centered-select">
+      <option>Blonde | Frank Ocean | USA | $19.99</option>
+      <option>Channel Orange | Frank Ocean | USA | $17.99</option>
+      <option>Endless | Frank Ocean | USA | $15.99</option>
+      <option>Lost & Found | Jorja Smith | UK | $16.99</option>
+      <option>Be Right Back | Jorja Smith | UK | $14.99</option>
+      <option>Falling or Flying | Jorja Smith | UK | $18.99</option>
+      <option>IGOR | Tyler, the Creator | USA | $15.99</option>
+      <option>Flower Boy | Tyler, the Creator | USA | $14.99</option>
+      <option>Call Me If You Get Lost | Tyler, the Creator | USA | $17.49</option>
+      <option>Wolf | Tyler, the Creator | USA | $13.99</option>
+      <option>Goblin | Tyler, the Creator | USA | $12.99</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="quantity"><b>Quantity:</b></label>
+    <input type="text" name="quantity" id="quantity" value="1" class="quantity-input">
+  </div>
+  <input type="submit" value="Add to Cart ➕" class="small-btn">
+</form>
+    <div class="centered-btn-row">
+  <form action="CartServlet" method="get">
+    <input type="submit" value="View Cart 🛒">
+  </form>
+</div>
+<footer><hr><p style='text-align:center;color:#888;font-size:0.95em;'>&copy; 2025 Virtual Shop.</p></footer>
+  </div>
+
+  <script>
+    // Restore select and quantity after adding to cart
+    var select = document.getElementById('cd');
+    var qty = document.getElementById('quantity');
+    // Save current selection and quantity before submitting
+    document.getElementById('add-form').addEventListener('submit', function() {
+      localStorage.setItem('lastCd', select.selectedIndex);
+      localStorage.setItem('lastQty', qty.value);
+    });
+    // Restore after page reload (redirect)
+    if (localStorage.getItem('lastCd')) {
+      select.selectedIndex = localStorage.getItem('lastCd');
+    }
+    if (localStorage.getItem('lastQty')) {
+      qty.value = localStorage.getItem('lastQty');
+    }
+    // Show success message if ?added=1 is in the URL
+    if (window.location.search.includes('added=1')) {
+      var msg = document.createElement('div');
+      msg.className = 'success-message';
+      msg.textContent = 'Album added to cart! 🎉';
+      document.querySelector('.container').prepend(msg);
+    }
+  </script>
+</body>
+</html>
