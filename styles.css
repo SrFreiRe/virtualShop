@@ -119,15 +119,24 @@ label {
 }
 
 .success-message {
-  background: #b7eacb;
-  color: #258a5b;
-  border-radius: 8px;
-  padding: 10px 0;
-  margin-bottom: 14px;
-  text-align: center;
-  font-size: 1.1em;
-  font-weight: 600;
-  box-shadow: 0 1px 6px 0 rgba(60,160,60,0.06);
+    background: #b7eacb;
+    color: #258a5b;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0 1px 6px 0 rgba(60,160,60,0.06);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s, transform 0.5s, height 0.5s;
+    height: 0;
+}
+.success-message.show {
+    height: 30px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .centered-btn-row {

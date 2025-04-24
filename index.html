@@ -65,6 +65,12 @@
       msg.className = 'success-message';
       msg.textContent = 'Album added to cart! 🎉';
       document.querySelector('.container').prepend(msg);
+      setTimeout(function() {
+        msg.classList.add('show');
+      }, 50);
+      setTimeout(function() {
+        msg.classList.remove('show');
+      }, 2500);
     }
   </script>
 </body>
