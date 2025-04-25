@@ -61,16 +61,17 @@
     }
     // Show success message if ?added=1 is in the URL
     if (window.location.search.includes('added=1')) {
-      var msg = document.createElement('div');
-      msg.className = 'success-message';
-      msg.textContent = 'Album added to cart! 🎉';
-      document.querySelector('.container').prepend(msg);
-      setTimeout(function() {
-        msg.classList.add('show');
-      }, 50);
-      setTimeout(function() {
-        msg.classList.remove('show');
-      }, 2500);
+      // Check if a success message is already visible
+        var msg = document.createElement('div');
+        msg.className = 'success-message';
+        msg.textContent = 'Album added to cart! 🎉';
+        document.querySelector('.container').prepend(msg);
+        setTimeout(function() {
+          msg.classList.add('show');
+        }, 50);
+        setTimeout(function() {
+          msg.classList.remove('show');
+        }, 50000);
     }
   </script>
 </body>

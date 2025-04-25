@@ -11,20 +11,12 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
     <servlet-class>CartServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>RemoveItemServlet</servlet-name>
-    <servlet-class>RemoveItemServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>CheckoutServlet</servlet-name>
     <servlet-class>CheckoutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CartServlet</servlet-name>
     <url-pattern>/CartServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>RemoveItemServlet</servlet-name>
-    <url-pattern>/RemoveItemServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CheckoutServlet</servlet-name>
