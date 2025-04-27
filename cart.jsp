@@ -13,7 +13,7 @@
 <body>
 <div class='container'>
 <header><h1 style='font-weight:700;letter-spacing:-1px;'>🛒 Your Cart</h1><p class='subtitle' style='font-size:1.1em;'>Selected albums</p></header>
-<table><tr><th>Album</th><th>Price</th><th>Quantity</th><th>Remove</th></tr>
+<table><tr><th>Album</th><th>Price</th><th>Quantity</th><th>Subtotal</th><th>Remove</th></tr>
 <%
     int i = 0;
     for (Map.Entry<String, Integer> entry : cart.entrySet()) {
@@ -30,6 +30,7 @@
     <td><%= albumName %></td>
     <td>$<%= String.format("%.2f", price) %></td>
     <td><%= quantity %></td>
+    <td>$<%= String.format("%.2f", price * quantity) %></td>
     <td>
         <div class='remove-btns' style='display:flex;align-items:center;justify-content:center;gap:6px;'>
             <form method='post' action='CartServlet' style='display:inline;'>

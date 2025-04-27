@@ -62,6 +62,8 @@
     // Show success message if ?added=1 is in the URL
     if (window.location.search.includes('added=1')) {
       // Check if a success message is already visible
+      var existingMsg = document.querySelector('.success-message.show');
+      if (!existingMsg) {
         var msg = document.createElement('div');
         msg.className = 'success-message';
         msg.textContent = 'Album added to cart! 🎉';
@@ -72,6 +74,7 @@
         setTimeout(function() {
           msg.classList.remove('show');
         }, 50000);
+      }
     }
   </script>
 </body>
