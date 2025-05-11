@@ -50,6 +50,21 @@ public class CartServlet extends HttpServlet {
             session.setAttribute("cart", cart);
             response.sendRedirect("CartServlet");
         }
+        else if ("checkout".equals(action)) {
+            // Handle checkout
+            Cart cartInSession = (Cart) session.getAttribute("cart");
+            if (cartInSession == null) {
+                cartInSession = new Cart();
+            }
+            request.setAttribute("cart", cartInSession);
+            request.setAttribute("total", cartInSession.getTotal());
+            // Clear the cart after checkout
+            cartInSession.clear();
+            session.setAttribute("cart", cartInSession);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/checkout.jsp");
+            dispatcher.forward(request, response);
+            return;
+        }
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

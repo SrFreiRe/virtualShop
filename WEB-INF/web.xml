@@ -10,16 +10,9 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
     <servlet-name>CartServlet</servlet-name>
     <servlet-class>CartServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>CheckoutServlet</servlet-name>
-    <servlet-class>CheckoutServlet</servlet-class>
-  </servlet>
+
   <servlet-mapping>
     <servlet-name>CartServlet</servlet-name>
     <url-pattern>/CartServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>CheckoutServlet</servlet-name>
-    <url-pattern>/CheckoutServlet</url-pattern>
   </servlet-mapping>
 </web-app>

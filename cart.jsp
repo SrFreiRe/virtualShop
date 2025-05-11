@@ -39,7 +39,8 @@
 <p style='text-align:center; font-size:1.2em;'><b>Total: <fmt:formatNumber value="${cart.total}" type="number" minFractionDigits="2" />$</b></p>
 <c:choose>
     <c:when test="${cart.size > 0}">
-        <form action='CheckoutServlet' method='post' style='text-align:center;'>
+        <form action='CartServlet' method='post' style='text-align:center;'>
+            <input type='hidden' name='action' value='checkout'>
             <input type='submit' value='Checkout ✅'>
         </form>
     </c:when>
