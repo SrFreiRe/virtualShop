@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- PostgreSQL JDBC DataSource -->
+    <Resource name="jdbc/VirtualShopDB" 
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="20"
+              maxIdle="10"
+              maxWaitMillis="10000"
+              username="postgres"
+              password="password"
+              driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://localhost:5432/virtualshop"/>
+</Context>
+<!--
+Replace 'your_db_username', 'your_db_password', and 'your_db_name' with your actual PostgreSQL credentials.
+Place the PostgreSQL JDBC driver (postgresql-<version>.jar) in WEB-INF/lib and name it conector.jar if you wish.
+-->

@@ -43,9 +43,7 @@ h2, h1 {
   margin-bottom: 20px;
 }
 
-label {
-  margin-bottom: 10px;
-}
+
 
 .centered-form .quantity-group {
   margin-bottom: 25px;
@@ -65,7 +63,7 @@ label {
   box-shadow: 0 2px 12px 0 rgba(179,136,255,0.08);
 }
 
-.quantity-input {
+input[type="text"], input[type="email"], input[type="password"] {
   width: 60px;
   border-radius: 10px;
   border: 1px solid #d1e3fa;
@@ -75,11 +73,19 @@ label {
   box-shadow: 0 1px 6px 0 rgba(179,136,255,0.08);
 }
 
+input[type="email"], input[type="password"] {
+  width: 90%;
+  max-width: 400px;
+}
+
+#card_number, #card_type {
+  width: 80%;
+  max-width: 400px;
+}
+
 .small-btn{
-  background: linear-gradient(90deg, #b388ff 0%, #81d4fa 100%);
   color: #fff;
   border: none;
-  border-radius: 16px;
   padding: 6px 14px;
   font-size: 0.98em;
   font-weight: 500;
@@ -96,7 +102,7 @@ label {
   transform: translateY(-2px) scale(1.04);
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
   background: #b388ff;
   color: white;
   border: none;
@@ -109,7 +115,7 @@ input[type="submit"] {
   transition: background 0.18s, box-shadow 0.18s;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="button"]:hover {
   background: #9d6eea;
   box-shadow: 0 4px 14px 0 rgba(179,136,255,0.14);
 }
@@ -192,8 +198,19 @@ tr:last-child td {
 }
 
 footer {
-  margin-top: 18px;
+  margin-top: auto;  /* This pushes the footer to the bottom of the container */
+  position: relative;
+  bottom: 0;
   color: #aaa;
+  padding: 8px;
+}
+
+.error {
+  color: #258a5b;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: center;
+  display: none;
 }
 
 hr {
